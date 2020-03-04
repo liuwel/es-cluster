@@ -3,7 +3,7 @@ services:
     es-node0:
         image: elasticsearch:7.6.0
         container_name: es-node0
-        environment: # setting container env
+        environment: 
             - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
         restart: always
         volumes:
@@ -21,7 +21,7 @@ services:
     es-node1:
         image: elasticsearch:7.6.0
         container_name: es-node1
-        environment: # setting container env
+        environment: 
             - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
         restart: always
         volumes:
