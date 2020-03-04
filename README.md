@@ -1,9 +1,12 @@
 # 使用 docker 创建 Elasticsearch 7.x 集群
 
-#### Elasticsearch 版本：7.6.0
+### Elasticsearch 版本：7.6.0
 服务节点 node0,node1 （可以自行添加更多节点）
+
 本机IP地址：172.16.0.17
+
 node0 绑定端口 9200,9300
+
 node1 绑定端口 9201,9301
 
 ####目录结构
