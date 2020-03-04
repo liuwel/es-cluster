@@ -1,0 +1,43 @@
+version: "3"
+services:
+    es-node0:
+        image: elasticsearch:7.6.0
+        container_name: es-node0
+        environment: # setting container env
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        restart: always
+        volumes:
+            - ./config/node0/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+            - es-node0:/usr/share/elasticsearch/data:rw
+            - es-logs0:/usr/share/elasticsearch/logs:rw
+        network_mode: "host"
+        ports:
+            - 9200:9200
+            - 9300:9300
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+    es-node1:
+        image: elasticsearch:7.6.0
+        container_name: es-node1
+        environment: # setting container env
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        restart: always
+        volumes:
+            - ./config/node1/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+            - es-node1:/usr/share/elasticsearch/data:rw
+            - es-logs1:/usr/share/elasticsearch/logs:rw
+        network_mode: "host"
+        ports:
+            - 9201:9201
+            - 9301:9301
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+volumes:
+    es-node0:
+    es-node1:
+    es-logs0:
+    es-logs1: 
