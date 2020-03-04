@@ -9,7 +9,7 @@ node0 绑定端口 9200,9300
 
 node1 绑定端口 9201,9301
 
-####目录结构
+### 目录结构
 ```shell
 es-cluster
 |-- README.md
